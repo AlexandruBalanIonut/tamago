@@ -3,16 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@testing-library/dom": "^7.28.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/react": "^17.0.0",
+    "autoprefixer": "^10.0.4",
+    "postcss": "^8.1.10",
+    "postcss-cli": "^8.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
+    "tailwindcss": "^2.0.1",
+    "typescript": "^4.1.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "prestart": "postcss src/styles/tailwind.css -o src/styles/tailwind-compiled.css",
     "start": "react-scripts start",
+    "prebuild": "NODE_ENV=production postcss src/styles/tailwind.css -o src/styles/tailwind-compiled.css",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
